@@ -3,10 +3,10 @@ package repl
 import (
 	"bufio"
 	"fmt"
-	"github.com/jake-abed/monkey/lexer"
-	"github.com/jake-abed/monkey/parser"
 	"github.com/jake-abed/monkey/evaluator"
+	"github.com/jake-abed/monkey/lexer"
 	"github.com/jake-abed/monkey/object"
+	"github.com/jake-abed/monkey/parser"
 	"io"
 )
 
@@ -47,7 +47,7 @@ func Start(in io.Reader, out io.Writer) {
 		}
 
 		evaluated := evaluator.Eval(program, env)
-		
+
 		if evaluated != nil {
 			io.WriteString(out, evaluated.Inspect())
 			io.WriteString(out, "\n")
