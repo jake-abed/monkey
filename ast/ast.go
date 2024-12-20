@@ -209,6 +209,28 @@ func (fl *FunctionLiteral) String() string {
 	return out.String()
 }
 
+type ArrayLiteral struct {
+	Token token.Token // the '[' token in this case
+	Elements []Expression
+}
+
+func (al *ArrayLiteral) expressionNode() {}
+func (al *ArrayLiteral) TokenLiteral() string { return al.Token.Literal }
+func (al *ArrayLiteral) String() string {
+	var out bytes.Buffer
+
+	elements := []string{}
+	for _, el := range al.Elements {
+		elements = append(elements, el.String())
+	}
+
+	out.WriteString("[")
+	out.WriteString(strings.Join(elements, ", "))
+	out.WriteString("]")
+
+	return out.String()
+}
+
 type PrefixExpression struct {
 	Token    token.Token
 	Operator string
