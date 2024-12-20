@@ -36,10 +36,12 @@ const (
 	SEMICOLON = ";"
 
 	// Parentheses and braces
-	LPAREN = "("
-	RPAREN = ")"
-	LBRACE = "{"
-	RBRACE = "}"
+	LPAREN   = "("
+	RPAREN   = ")"
+	LBRACE   = "{"
+	RBRACE   = "}"
+	LBRACKET = "["
+	RBRACKET = "]"
 
 	// Data Types
 	STRING = "STRING"
