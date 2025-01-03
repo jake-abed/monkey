@@ -168,11 +168,11 @@ func (b *Boolean) String() string       { return b.Token.Literal }
 
 type IndexExpression struct {
 	Token token.Token // the [ token
-	Left Expression
+	Left  Expression
 	Index Expression
 }
 
-func (ie *IndexExpression) expressionNode() {}
+func (ie *IndexExpression) expressionNode()      {}
 func (ie *IndexExpression) TokenLiteral() string { return ie.Token.Literal }
 func (ie *IndexExpression) String() string {
 	var out bytes.Buffer
@@ -182,7 +182,7 @@ func (ie *IndexExpression) String() string {
 	out.WriteString("[")
 	out.WriteString(ie.Index.String())
 	out.WriteString("])")
-	
+
 	return out.String()
 }
 
@@ -230,11 +230,11 @@ func (fl *FunctionLiteral) String() string {
 }
 
 type ArrayLiteral struct {
-	Token token.Token // the '[' token in this case
+	Token    token.Token // the '[' token in this case
 	Elements []Expression
 }
 
-func (al *ArrayLiteral) expressionNode() {}
+func (al *ArrayLiteral) expressionNode()      {}
 func (al *ArrayLiteral) TokenLiteral() string { return al.Token.Literal }
 func (al *ArrayLiteral) String() string {
 	var out bytes.Buffer
